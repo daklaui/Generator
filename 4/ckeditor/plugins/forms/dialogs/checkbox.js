@@ -1,6 +1,6 @@
 ﻿/**
- * @license Copyright (c) 2003-2017, CKSource - Frederico Knabben. All rights reserved.
- * For licensing, see LICENSE.md or http://ckeditor.com/license
+ * @license Copyright (c) 2003-2021, CKSource - Frederico Knabben. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-oss-license
  */
 
 CKEDITOR.dialog.add( 'checkbox', function( editor ) {
@@ -8,27 +8,32 @@ CKEDITOR.dialog.add( 'checkbox', function( editor ) {
 		title: editor.lang.forms.checkboxAndRadio.checkboxTitle,
 		minWidth: 350,
 		minHeight: 140,
-		onShow: function() {
-			delete this.checkbox;
-
-			var element = this.getParentEditor().getSelection().getSelectedElement();
+		getModel: function( editor ) {
+			var element = editor.getSelection().getSelectedElement();
 
 			if ( element && element.getAttribute( 'type' ) == 'checkbox' ) {
-				this.checkbox = element;
+				return element;
+			}
+
+			return null;
+		},
+		onShow: function() {
+			var element = this.getModel( this.getParentEditor() );
+
+			if ( element ) {
 				this.setupContent( element );
 			}
 		},
 		onOk: function() {
-			var editor,
-				element = this.checkbox,
-				isInsertMode = !element;
+			var editor = this.getParentEditor(),
+				element = this.getModel( editor );
 
-			if ( isInsertMode ) {
-				editor = this.getParentEditor();
+			if ( !element ) {
 				element = editor.document.createElement( 'input' );
 				element.setAttribute( 'type', 'checkbox' );
 				editor.insertElement( element );
 			}
+
 			this.commitContent( { element: element } );
 		},
 		contents: [ {
@@ -76,7 +81,7 @@ CKEDITOR.dialog.add( 'checkbox', function( editor ) {
 						element.setAttribute( 'value', value );
 					else {
 						if ( CKEDITOR.env.ie ) {
-							// Remove attribute 'value' of checkbox (#4721).
+							// Remove attribute 'value' of checkbox (https://dev.ckeditor.com/ticket/4721).
 							var checkbox = new CKEDITOR.dom.element( 'input', element.getDocument() );
 							element.copyAttributes( checkbox, { value: 1 } );
 							checkbox.replace( element );
@@ -116,10 +121,17 @@ CKEDITOR.dialog.add( 'checkbox', function( editor ) {
 						}
 					} else {
 						var value = this.getValue();
-						if ( value )
+						// Blink/Webkit needs to change checked property, not attribute. (https://dev.ckeditor.com/ticket/12465)
+						if ( CKEDITOR.env.webkit ) {
+							element.$.checked = value;
+						}
+
+						if ( value ) {
 							element.setAttribute( 'checked', 'checked' );
-						else
+						}
+						else {
 							element.removeAttribute( 'checked' );
+						}
 					}
 				}
 			},
@@ -130,9 +142,7 @@ CKEDITOR.dialog.add( 'checkbox', function( editor ) {
 				'default': '',
 				accessKey: 'Q',
 				value: 'required',
-				setup: function( element ) {
-					this.setValue( element.getAttribute( 'required' ) );
-				},
+				setup: CKEDITOR.plugins.forms._setupRequiredAttribute,
 				commit: function( data ) {
 					var element = data.element;
 					if ( this.getValue() )

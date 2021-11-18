@@ -10562,11 +10562,13 @@
 }
 /* line 401, /Users/jan/devex/front-end/vendor/bootstrap-sass/assets/stylesheets/bootstrap/_navbar.scss */
 .toolbox-reset .navbar-default .navbar-brand {
-  color: #777;
+  color: white;
+  font-size: 4em;
+  margin: 5px;
 }
 /* line 403, /Users/jan/devex/front-end/vendor/bootstrap-sass/assets/stylesheets/bootstrap/_navbar.scss */
 .toolbox-reset .navbar-default .navbar-brand:hover, .toolbox-reset .navbar-default .navbar-brand:focus {
-  color: #5e5e5e;
+  color: white;
   background-color: transparent;
 }
 /* line 410, /Users/jan/devex/front-end/vendor/bootstrap-sass/assets/stylesheets/bootstrap/_navbar.scss */
@@ -10779,12 +10781,12 @@
   border: 0;
   border-radius: 0;
   margin: 0;
-  height: 50px;
+  height: 5em;
   min-height: inherit;
 }
 /* line 28, /Users/jan/devex/front-end/app/assets/stylesheets/ui_toolbox/_navbar.scss */
 .toolbox-reset .navbar-default {
-  background-color: #4d4d4d;
+  background-color: #3b579d;
   color: white;
 }
 @media (max-width: 767px) {

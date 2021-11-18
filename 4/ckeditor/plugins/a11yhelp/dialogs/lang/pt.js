@@ -1,6 +1,6 @@
 ﻿/**
- * @license Copyright (c) 2003-2017, CKSource - Frederico Knabben. All rights reserved.
- * For licensing, see LICENSE.md or http://ckeditor.com/license
+ * @license Copyright (c) 2003-2021, CKSource - Frederico Knabben. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-oss-license
  */
 
 CKEDITOR.plugins.setLang( 'a11yhelp', 'pt', {
@@ -18,12 +18,12 @@ CKEDITOR.plugins.setLang( 'a11yhelp', 'pt', {
 			{
 			name: 'Janela do editor',
 			legend:
-				'Inside a dialog, press TAB to navigate to the next dialog element, press SHIFT+TAB to move to the previous dialog element, press ENTER to submit the dialog, press ESC to cancel the dialog. When a dialog has multiple tabs, the tab list can be reached either with ALT+F10 or with TAB as part of the dialog tabbing order. With tab list focused, move to the next and previous tab with RIGHT and LEFT ARROW, respectively.'  // MISSING
+				'Dentro de uma janela de diálogo, use TAB para navegar para o campo seguinte; use SHIFT + TAB para mover para o campo anterior, use ENTER para submeter a janela, use ESC para cancelar a janela. Para as janelas que tenham vários separadores, use ALT + F10 para navegar na lista de separadores. Na lista pode mover entre o separador seguinte ou anterior com SETA DIREITA e SETA ESQUERDA, respetivamente'
 		},
 
 			{
 			name: 'Menu de contexto do editor',
-			legend: 'Clique em ${contextMenu} ou TECLA APLICAÇÃO para abrir o menu de contexto. Depois vá para a opção do menu seguinte com TAB ou SETA PARA BAIXO. Vá para a opção anterior com  SHIFT+TAB ou SETA PARA CIMA. Pressione ESPAÇO ou ENTER para selecionar a opção do menu.  Abra o submenu da opção atual com ESPAÇO, ENTER ou SETA DIREITA. GVá para o item do menu parente  com ESC ou SETA ESQUERDA. Feche o menu de contexto com ESC.'
+			legend: 'Clique em ${contextMenu} ou TECLA APLICAÇÃO para abrir o menu de contexto. Depois vá para a opção do menu seguinte com TAB ou SETA PARA BAIXO. Vá para a opção anterior com  SHIFT+TAB ou SETA PARA CIMA. Pressione ESPAÇO ou ENTER para selecionar a opção do menu.  Abra o submenu da opção atual com ESPAÇO, ENTER ou SETA DIREITA. Vá para o item do menu contentor com ESC ou SETA ESQUERDA. Feche o menu de contexto com ESC.'
 		},
 
 			{
@@ -79,24 +79,29 @@ CKEDITOR.plugins.setLang( 'a11yhelp', 'pt', {
 			{
 			name: 'Ajuda a acessibilidade',
 			legend: 'Pressione ${a11yHelp}'
+		},
+			{
+			name: ' Paste as plain text', // MISSING
+			legend: 'Press ${pastetext}', // MISSING
+			legendEdge: 'Press ${pastetext}, followed by ${paste}' // MISSING
 		}
 		]
 	}
 	],
-	tab: 'Tab', // MISSING
+	tab: 'Separador',
 	pause: 'Pausa',
 	capslock: 'Maiúsculas',
 	escape: 'Esc',
-	pageUp: 'Page Up', // MISSING
-	pageDown: 'Page Down', // MISSING
+	pageUp: 'Subir página',
+	pageDown: 'Descer página',
 	leftArrow: 'Seta esquerda',
 	upArrow: 'Seta para cima',
 	rightArrow: 'Seta direita',
 	downArrow: 'Seta para baixo',
 	insert: 'Inserir',
-	leftWindowKey: 'Left Windows key', // MISSING
-	rightWindowKey: 'Right Windows key', // MISSING
-	selectKey: 'Select key', // MISSING
+	leftWindowKey: 'Tecla esquerda Windows',
+	rightWindowKey: 'Tecla direita Windows',
+	selectKey: 'Selecionar tecla',
 	numpad0: 'Numpad 0', // MISSING
 	numpad1: 'Numpad 1', // MISSING
 	numpad2: 'Numpad 2', // MISSING
@@ -110,7 +115,7 @@ CKEDITOR.plugins.setLang( 'a11yhelp', 'pt', {
 	multiply: 'Multiplicar',
 	add: 'Adicionar',
 	subtract: 'Subtrair',
-	decimalPoint: 'Decimal Point', // MISSING
+	decimalPoint: 'Ponto decimal',
 	divide: 'Separar',
 	f1: 'F1',
 	f2: 'F2',
@@ -126,8 +131,8 @@ CKEDITOR.plugins.setLang( 'a11yhelp', 'pt', {
 	f12: 'F12',
 	numLock: 'Num Lock', // MISSING
 	scrollLock: 'Scroll Lock', // MISSING
-	semiColon: 'Semicolon', // MISSING
-	equalSign: 'Equal Sign', // MISSING
+	semiColon: 'Ponto e vírgula',
+	equalSign: 'Sinald e igual',
 	comma: 'Vírgula',
 	dash: 'Cardinal',
 	period: 'Ponto',

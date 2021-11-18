@@ -1,6 +1,6 @@
 /**
- * @license Copyright (c) 2003-2017, CKSource - Frederico Knabben. All rights reserved.
- * For licensing, see LICENSE.md or http://ckeditor.com/license
+ * @license Copyright (c) 2003-2021, CKSource - Frederico Knabben. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-oss-license
  */
 
 /**
@@ -78,10 +78,13 @@ CKEDITOR.lang[ 'nl' ] = {
 		width: 'Breedte',
 		height: 'Hoogte',
 		align: 'Uitlijning',
-		alignLeft: 'Links',
-		alignRight: 'Rechts',
+		left: 'Links',
+		right: 'Rechts',
+		center: 'Centreren',
+		justify: 'Uitvullen',
+		alignLeft: 'Links uitlijnen',
+		alignRight: 'Rechts uitlijnen',
 		alignCenter: 'Centreren',
-		alignJustify: 'Uitvullen',
 		alignTop: 'Boven',
 		alignMiddle: 'Midden',
 		alignBottom: 'Onder',
@@ -89,6 +92,7 @@ CKEDITOR.lang[ 'nl' ] = {
 		invalidValue: 'Ongeldige waarde.',
 		invalidHeight: 'De hoogte moet een getal zijn.',
 		invalidWidth: 'De breedte moet een getal zijn.',
+		invalidLength: 'Value specified for the "%1" field must be a positive number with or without a valid measurement unit (%2).', // MISSING
 		invalidCssLength: 'Waarde in veld "%1" moet een positief nummer zijn, met of zonder een geldige CSS meeteenheid (px, %, in, cm, mm, em, ex, pt of pc).',
 		invalidHtmlLength: 'Waarde in veld "%1" moet een positief nummer zijn, met of zonder een geldige HTML meeteenheid (px of %).',
 		invalidInlineStyle: 'Waarde voor de online stijl moet bestaan uit een of meerdere tupels met het formaat "naam : waarde", gescheiden door puntkomma\'s.',
@@ -108,10 +112,36 @@ CKEDITOR.lang[ 'nl' ] = {
 			35: 'End',
 			36: 'Home',
 			46: 'Verwijderen',
+			112: 'F1',
+			113: 'F2',
+			114: 'F3',
+			115: 'F4',
+			116: 'F5',
+			117: 'F6',
+			118: 'F7',
+			119: 'F8',
+			120: 'F9',
+			121: 'F10',
+			122: 'F11',
+			123: 'F12',
+			124: 'F13',
+			125: 'F14',
+			126: 'F15',
+			127: 'F16',
+			128: 'F17',
+			129: 'F18',
+			130: 'F19',
+			131: 'F20',
+			132: 'F21',
+			133: 'F22',
+			134: 'F23',
+			135: 'F24',
 			224: 'Command'
 		},
 
 		// Prepended to ARIA labels with shortcuts.
-		keyboardShortcut: 'Sneltoets'
+		keyboardShortcut: 'Sneltoets',
+
+		optionDefault: 'Standaard'
 	}
 };

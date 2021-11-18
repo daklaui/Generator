@@ -1,6 +1,6 @@
 ﻿/**
- * @license Copyright (c) 2003-2017, CKSource - Frederico Knabben. All rights reserved.
- * For licensing, see LICENSE.md or http://ckeditor.com/license
+ * @license Copyright (c) 2003-2021, CKSource - Frederico Knabben. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-oss-license
  */
 
 CKEDITOR.plugins.setLang( 'a11yhelp', 'nl', {
@@ -79,6 +79,11 @@ CKEDITOR.plugins.setLang( 'a11yhelp', 'nl', {
 			{
 			name: 'Toegankelijkheidshulp',
 			legend: 'Druk op ${a11yHelp}'
+		},
+			{
+			name: 'Plakken als platte tekst',
+			legend: 'Druk op ${pastetext}',
+			legendEdge: 'Druk op ${pastetext}, gevolgd door ${paste}'
 		}
 		]
 	}

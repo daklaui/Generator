@@ -1,6 +1,6 @@
 /**
- * @license Copyright (c) 2003-2017, CKSource - Frederico Knabben. All rights reserved.
- * For licensing, see LICENSE.md or http://ckeditor.com/license
+ * @license Copyright (c) 2003-2021, CKSource - Frederico Knabben. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-oss-license
  */
 
 /**
@@ -78,10 +78,13 @@ CKEDITOR.lang[ 'da' ] = {
 		width: 'Bredde',
 		height: 'Højde',
 		align: 'Justering',
-		alignLeft: 'Venstre',
-		alignRight: 'Højre',
+		left: 'Venstre',
+		right: 'Højre',
+		center: 'Center',
+		justify: 'Lige margener',
+		alignLeft: 'Venstrestillet',
+		alignRight: 'Højrestillet',
 		alignCenter: 'Centreret',
-		alignJustify: 'Lige margener',
 		alignTop: 'Øverst',
 		alignMiddle: 'Centreret',
 		alignBottom: 'Nederst',
@@ -89,6 +92,7 @@ CKEDITOR.lang[ 'da' ] = {
 		invalidValue: 'Ugyldig værdi.',
 		invalidHeight: 'Højde skal være et tal.',
 		invalidWidth: 'Bredde skal være et tal.',
+		invalidLength: 'Værdien angivet for feltet "%1" skal være et positivt heltal med eller uden en gyldig måleenhed (%2).',
 		invalidCssLength: 'Værdien specificeret for "%1" feltet skal være et positivt nummer med eller uden en CSS måleenhed  (px, %, in, cm, mm, em, ex, pt, eller pc).',
 		invalidHtmlLength: 'Værdien specificeret for "%1" feltet skal være et positivt nummer med eller uden en CSS måleenhed  (px eller %).',
 		invalidInlineStyle: 'Værdien specificeret for inline style skal indeholde en eller flere elementer med et format som "name:value", separeret af semikoloner',
@@ -105,13 +109,39 @@ CKEDITOR.lang[ 'da' ] = {
 			17: 'Ctrl',
 			18: 'Alt',
 			32: 'Mellemrum',
-			35: 'End',
-			36: 'Home',
+			35: 'Slut',
+			36: 'Hjem',
 			46: 'Slet',
-			224: 'Command'
+			112: 'F1',
+			113: 'F2',
+			114: 'F3',
+			115: 'F4',
+			116: 'F5',
+			117: 'F6',
+			118: 'F7',
+			119: 'F8',
+			120: 'F9',
+			121: 'F10',
+			122: 'F11',
+			123: 'F12',
+			124: 'F13',
+			125: 'F14',
+			126: 'F15',
+			127: 'F16',
+			128: 'F17',
+			129: 'F18',
+			130: 'F19',
+			131: 'F20',
+			132: 'F21',
+			133: 'F22',
+			134: 'F23',
+			135: 'F24',
+			224: 'Kommando'
 		},
 
 		// Prepended to ARIA labels with shortcuts.
-		keyboardShortcut: 'Tastatur genvej'
+		keyboardShortcut: 'Tastatur genvej',
+
+		optionDefault: 'Standard'
 	}
 };

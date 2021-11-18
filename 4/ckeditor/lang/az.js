@@ -1,6 +1,6 @@
 /**
- * @license Copyright (c) 2003-2017, CKSource - Frederico Knabben. All rights reserved.
- * For licensing, see LICENSE.md or http://ckeditor.com/license
+ * @license Copyright (c) 2003-2021, CKSource - Frederico Knabben. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-oss-license
  */
 
 /**
@@ -78,10 +78,13 @@ CKEDITOR.lang[ 'az' ] = {
 		width: 'En',
 		height: 'Uzunluq',
 		align: 'Yerləşmə',
-		alignLeft: 'Sol',
-		alignRight: 'Sağ',
-		alignCenter: 'Mərkəz',
-		alignJustify: 'Eninə görə',
+		left: 'Sol',
+		right: 'Sağ',
+		center: 'Mərkəz',
+		justify: 'Eninə görə',
+		alignLeft: 'Soldan düzləndir',
+		alignRight: 'Sağdan düzləndir',
+		alignCenter: 'Mərkəzə düzləndir',
 		alignTop: 'Yuxarı',
 		alignMiddle: 'Orta',
 		alignBottom: 'Aşağı',
@@ -89,6 +92,7 @@ CKEDITOR.lang[ 'az' ] = {
 		invalidValue: 'Yanlışdır.',
 		invalidHeight: 'Hündürlük rəqəm olmalıdır.',
 		invalidWidth: 'En rəqəm olmalıdır.',
+		invalidLength: '"%1" xanasına, ölçü vahidinin (%2) göstərilməsindən asılı olmayaraq, müsbət ədəd qeyd olunmalıdır.',
 		invalidCssLength: '"%1" xanasında göstərilən məzmun tam və müsbət olmalıdır, CSS-də olan ölçü vahidlərin (px, %, in, cm, mm, em, ex, pt, or pc) istifadısinə icazə verilir.',
 		invalidHtmlLength: '"%1" xanasında göstərilən məzmun tam və müsbət olmalıdır HTML-də olan ölçü vahidlərin (px və ya %) istifadısinə icazə verilir.',
 		invalidInlineStyle: 'Teq içində olan üslub "ad :  məzmun" şəklidə, nöqtə-verqül işarəsi ilə bitməlidir',
@@ -108,10 +112,36 @@ CKEDITOR.lang[ 'az' ] = {
 			35: 'Son',
 			36: 'Evə',
 			46: 'Sil',
+			112: 'F1',
+			113: 'F2',
+			114: 'F3',
+			115: 'F4',
+			116: 'F5',
+			117: 'F6',
+			118: 'F7',
+			119: 'F8',
+			120: 'F9',
+			121: 'F10',
+			122: 'F11',
+			123: 'F12',
+			124: 'F13',
+			125: 'F14',
+			126: 'F15',
+			127: 'F16',
+			128: 'F17',
+			129: 'F18',
+			130: 'F19',
+			131: 'F20',
+			132: 'F21',
+			133: 'F22',
+			134: 'F23',
+			135: 'F24',
 			224: 'Əmr'
 		},
 
 		// Prepended to ARIA labels with shortcuts.
-		keyboardShortcut: 'Qısayol düymələri'
+		keyboardShortcut: 'Qısayol düymələri',
+
+		optionDefault: 'Standart'
 	}
 };

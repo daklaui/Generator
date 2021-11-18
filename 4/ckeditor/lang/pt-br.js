@@ -1,6 +1,6 @@
 /**
- * @license Copyright (c) 2003-2017, CKSource - Frederico Knabben. All rights reserved.
- * For licensing, see LICENSE.md or http://ckeditor.com/license
+ * @license Copyright (c) 2003-2021, CKSource - Frederico Knabben. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-oss-license
  */
 
 /**
@@ -77,10 +77,13 @@ CKEDITOR.lang[ 'pt-br' ] = {
 		width: 'Largura',
 		height: 'Altura',
 		align: 'Alinhamento',
-		alignLeft: 'Esquerda',
-		alignRight: 'Direita',
-		alignCenter: 'Centralizado',
-		alignJustify: 'Justificar',
+		left: 'Esquerda',
+		right: 'Direita',
+		center: 'Centralizado',
+		justify: 'Justificar',
+		alignLeft: 'Alinhar Esquerda',
+		alignRight: 'Alinhar Direita',
+		alignCenter: 'Centralizar',
 		alignTop: 'Superior',
 		alignMiddle: 'Centralizado',
 		alignBottom: 'Inferior',
@@ -88,6 +91,7 @@ CKEDITOR.lang[ 'pt-br' ] = {
 		invalidValue: 'Valor inválido.',
 		invalidHeight: 'A altura tem que ser um número',
 		invalidWidth: 'A largura tem que ser um número.',
+		invalidLength: 'Valor especifico para o campo "%1" deve ser um número positivo com ou sem uma unidade mensurável (%2) válida.',
 		invalidCssLength: 'O valor do campo "%1" deve ser um número positivo opcionalmente seguido por uma válida unidade de medida de CSS (px, %, in, cm, mm, em, ex, pt ou pc).',
 		invalidHtmlLength: 'O valor do campo "%1" deve ser um número positivo opcionalmente seguido por uma válida unidade de medida de HTML (px ou %).',
 		invalidInlineStyle: 'O valor válido para estilo deve conter uma ou mais tuplas no formato "nome : valor", separados por ponto e vírgula.',
@@ -107,10 +111,36 @@ CKEDITOR.lang[ 'pt-br' ] = {
 			35: 'End',
 			36: 'Home',
 			46: 'Delete',
+			112: 'F1',
+			113: 'F2',
+			114: 'F3',
+			115: 'F4',
+			116: 'F5',
+			117: 'F6',
+			118: 'F7',
+			119: 'F8',
+			120: 'F9',
+			121: 'F10',
+			122: 'F11',
+			123: 'F12',
+			124: 'F13',
+			125: 'F14',
+			126: 'F15',
+			127: 'F16',
+			128: 'F17',
+			129: 'F18',
+			130: 'F19',
+			131: 'F20',
+			132: 'F21',
+			133: 'F22',
+			134: 'F23',
+			135: 'F24',
 			224: 'Comando'
 		},
 
 		// Prepended to ARIA labels with shortcuts.
-		keyboardShortcut: 'Atalho do teclado'
+		keyboardShortcut: 'Atalho do teclado',
+
+		optionDefault: 'Padrão'
 	}
 };

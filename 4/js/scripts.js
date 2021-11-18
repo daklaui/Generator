@@ -181,7 +181,7 @@ function gridSystemGenerator() {
 		var n = $(this).val().split(" ", 12);
 		$.each(n, function(n, r) {
 			e = e + parseInt(r);
-			t += '<div class="span' + r + ' column"></div>';
+			t += '<div class="col-sm-12 col-md-' + r + ' column"></div>';
 		});
 		if (e == 12) {
 			$(this).parent().next().children().html(t);
@@ -228,6 +228,10 @@ function clearDemo() {
 	if (supportstorage())
 		localStorage.removeItem("layoutdata");
 }
+String.prototype.replaceAll = function (find, replace) {
+    var str = this;
+    return str.replace(new RegExp(find.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&'), 'g'), replace);
+};
 function removeMenuClasses() {
 	$("#menu-layoutit li button").removeClass("active");
 }
@@ -235,59 +239,73 @@ function changeStructure(e, t) {
 	$("#download-layout ." + e).removeClass(e).addClass(t);
 }
 function cleanHtml(e) {
+	if($(e).children().attr('id') !== undefined){
+		$(e).parent().append("<div id='Quiz'></div>");
+	}
 	$(e).parent().append($(e).children().html());
+}
+function resetBtnCopie(value){
+	navigator.clipboard.writeText(value)
+	$("#copieButton").html('Copied!');
+	setTimeout(() => {
+		$("#copieButton").html('<i class="fa fa-copy mr-1"></i> Copy code !');
+	}, 1000);
 }
 function downloadLayoutSrc() {
 	var e = "";
 	$("#download-layout").children().html($(".demo").html());
+
 	var t = $("#download-layout").children();
 	t.find(".preview, .configuration, .drag, .remove").remove();
 	t.find(".lyrow").addClass("removeClean");
 	t.find(".box-element").addClass("removeClean");
+
 	t.find(".lyrow .lyrow .lyrow .lyrow .lyrow .removeClean").each(function() {
 		cleanHtml(this);
 	});
+
 	t.find(".lyrow .lyrow .lyrow .lyrow .removeClean").each(function() {
 		cleanHtml(this);
 	});
+
 	t.find(".lyrow .lyrow .lyrow .removeClean").each(function() {
 		cleanHtml(this);
 	});
 	t.find(".lyrow .lyrow .removeClean").each(function() {
 		cleanHtml(this);
 	});
+
 	t.find(".lyrow .removeClean").each(function() {
 		cleanHtml(this);
 	});
 	t.find(".removeClean").each(function() {
 		cleanHtml(this);
 	});
+
 	t.find(".removeClean").remove();
+
 	$("#download-layout .column").removeClass("ui-sortable");
 	$("#download-layout .row-fluid").removeClass("clearfix").children().removeClass("column");
+	changeStructure("container-fluid", "container");
 	if ($("#download-layout .container").length > 0) {
 		changeStructure("row-fluid", "row");
 	}
-	formatSrc = $.htmlClean($("#download-layout").html(), {
-		format: true,
-		allowedAttributes: [
-			["id"],
-			["class"],
-			["data-toggle"],
-			["data-target"],
-			["data-parent"],
-			["role"],
-			["data-dismiss"],
-			["aria-labelledby"],
-			["aria-hidden"],
-			["data-slide-to"],
-			["data-slide"]
-		]
-	});
-	$("#download-layout").html(formatSrc);
+
+	$("#fluidPage").removeClass("active");
+	$("#fixedPage").addClass("active");
+	formatSrc = $("#download-layout").html()
+	formatSrc = formatSrc.replaceAll(' contenteditable="true"', '');
+	$("#download-layout").html();
 	$("#downloadModal textarea").empty();
-	$("#downloadModal textarea").val(formatSrc);
+
+		  formatSrc = formatSrc.trim();
+		  console.log(formatSrc.substring(24,formatSrc.length-6).trim())
+	$("#downloadModal textarea").val(formatSrc.substring(24,formatSrc.length-6).trim());
+
 	webpage = formatSrc;
+	resetBtnCopie(formatSrc.substring(24,formatSrc.length-6).trim())
+
+
 }
 
 var currentDocument = null;
@@ -325,12 +343,21 @@ function initContainer(){
 		}
 	});
 	configurationElm();
+	$.fn.modal.Constructor.prototype.enforceFocus = function() {
+		modal_this = this
+		$(document).on('focusin.modal', function (e) {
+		  if (modal_this.$element[0] !== e.target && !modal_this.$element.has(e.target).length 
+		  && !$(e.target.parentNode).hasClass('cke_dialog_ui_input_select') 
+		  && !$(e.target.parentNode).hasClass('cke_dialog_ui_input_text')) {
+			modal_this.$element.focus()
+		  }
+		})
+	  };
 }
 $(document).ready(function() {
-	CKEDITOR.disableAutoInline = true;
 	restoreData();
 	var contenthandle = CKEDITOR.replace( 'contenteditor' ,{
-		language: 'en',
+		language: 'fr',
 		contentsCss: ['css/bootstrap-combined.min.css'],
 		allowedContent: true
 	});
@@ -380,16 +407,21 @@ $(document).ready(function() {
 			if(stopsave>0) stopsave--;
 			startdrag = 0;
 		}
+
 	});
+
 	initContainer();
 	$('body.edit .demo').on("click","[data-target=#editorModal]",function(e) {
 		e.preventDefault();
+	//	$(".editorTextArea").show();
 		currenteditor = $(this).parent().parent().find('.view');
 		var eText = currenteditor.html();
 		contenthandle.setData(eText);
 	});
 	$("#savecontent").click(function(e) {
 		e.preventDefault();
+	//	$(".editorTextArea").hide();
+	console.log(contenthandle.getData())
 		currenteditor.html(contenthandle.getData());
 	});
 	$("[data-target=#downloadModal]").click(function(e) {

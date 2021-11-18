@@ -1,6 +1,6 @@
 /**
- * @license Copyright (c) 2003-2017, CKSource - Frederico Knabben. All rights reserved.
- * For licensing, see LICENSE.md or http://ckeditor.com/license
+ * @license Copyright (c) 2003-2021, CKSource - Frederico Knabben. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-oss-license
  */
 
 /**
@@ -20,7 +20,7 @@
 CKEDITOR.lang[ 'uk' ] = {
 	// ARIA description.
 	editor: 'Текстовий редактор',
-	editorPanel: 'Панель текстового редактора',
+	editorPanel: 'Панель розширеного текстового редактора',
 
 	// Common messages and labels.
 	common: {
@@ -78,10 +78,13 @@ CKEDITOR.lang[ 'uk' ] = {
 		width: 'Ширина',
 		height: 'Висота',
 		align: 'Вирівнювання',
+		left: 'По лівому краю',
+		right: 'По правому краю',
+		center: 'По центру',
+		justify: 'По ширині',
 		alignLeft: 'По лівому краю',
 		alignRight: 'По правому краю',
 		alignCenter: 'По центру',
-		alignJustify: 'По ширині',
 		alignTop: 'По верхньому краю',
 		alignMiddle: 'По середині',
 		alignBottom: 'По нижньому краю',
@@ -89,6 +92,7 @@ CKEDITOR.lang[ 'uk' ] = {
 		invalidValue: 'Невірне значення.',
 		invalidHeight: 'Висота повинна бути цілим числом.',
 		invalidWidth: 'Ширина повинна бути цілим числом.',
+		invalidLength: 'Вказане значення для поля "%1" має бути позитивним числом без або з коректним символом одиниці виміру (%2).',
 		invalidCssLength: 'Значення, вказане для "%1" в полі повинно бути позитивним числом або без дійсного виміру CSS блоку (px, %, in, cm, mm, em, ex, pt або pc).',
 		invalidHtmlLength: 'Значення, вказане для "%1" в полі повинно бути позитивним числом або без дійсного виміру HTML блоку (px або %).',
 		invalidInlineStyle: 'Значення, вказане для вбудованого стилю повинне складатися з одного чи кількох кортежів у форматі "ім\'я : значення", розділених крапкою з комою.',
@@ -104,14 +108,40 @@ CKEDITOR.lang[ 'uk' ] = {
 			16: 'Shift',
 			17: 'Ctrl',
 			18: 'Alt',
-			32: 'Space', // MISSING
+			32: 'Пробіл',
 			35: 'End',
 			36: 'Home',
 			46: 'Видалити',
-			224: 'Command' // MISSING
+			112: 'F1',
+			113: 'F2',
+			114: 'F3',
+			115: 'F4',
+			116: 'F5',
+			117: 'F6',
+			118: 'F7',
+			119: 'F8',
+			120: 'F9',
+			121: 'F10',
+			122: 'F11',
+			123: 'F12',
+			124: 'F13',
+			125: 'F14',
+			126: 'F15',
+			127: 'F16',
+			128: 'F17',
+			129: 'F18',
+			130: 'F19',
+			131: 'F20',
+			132: 'F21',
+			133: 'F22',
+			134: 'F23',
+			135: 'F24',
+			224: 'Command'
 		},
 
 		// Prepended to ARIA labels with shortcuts.
-		keyboardShortcut: 'Keyboard shortcut' // MISSING
+		keyboardShortcut: 'Сполучення клавіш',
+
+		optionDefault: 'Типово'
 	}
 };
